@@ -7,12 +7,17 @@ import "./index.css";
 
 function App() {
   const [feedBack, setFeedback] = useState(FeedBackData);
+  const deleteFeedback = (id) => {
+    if (window.confirm("Are you sure you want to delete")) {
+      setFeedback(feedBack.filter((item) => item.id !== id));
+    }
+  };
   return (
     <>
       <Header />
 
       <div>
-        <FeedBackList feedBack={feedBack} />
+        <FeedBackList feedBack={feedBack} handleDelete={deleteFeedback} />
       </div>
     </>
   );
