@@ -17,6 +17,8 @@ function Header({ text,bgColor,textColor}) {
   );
 }
 
+// utilisation de propos pour modifier les styles 
+
 Header.defaultProps ={
     text: 'FeedBack UI',
     bgColor:'rgba(0.0.0.4)',
