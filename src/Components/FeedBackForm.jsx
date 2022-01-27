@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Card from './shared/Card';
 import Button from './shared/Button';
 import FeedBackSelect from './FeedBackSelect';
-const FeedBackForm = (handleAdd) => {
+const FeedBackForm = ({handleAdd}) => {
 
     const [text,setText] = useState('')
     const [btnDisabled,setBtnDisabled] = useState(true)
