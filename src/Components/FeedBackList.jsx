@@ -1,23 +1,26 @@
 import FeedBackItem from "./FeedBackItem";
 import PropTypes from 'prop-types'
-function FeedBackList ({feedBack}){
-   if(!feedBack || feedBack.length === 0){
+function FeedBackList ({feedback,handleDelete}){
+   if(!feedback || feedback.length === 0){
       return <h2>No feedBack yet</h2>
    }
    
     return <div className="feedback-list">
-        {feedBack.map((item)=>(
-            <FeedBackItem key={item.id} item={item} handleDelete={(id)=>console.log(id)} />
+        {feedback.map((item)=>(
+            <FeedBackItem key={item.id} item={item} handleDelete={handleDelete} />
         ))}
     </div>
 }
 
 FeedBackList.propTypes={
-    feedBack: PropTypes.arrayOf({
-        id:PropTypes.number,
-        rating:PropTypes.number,
-        text:PropTypes.text
-    })
-}
+    feedback: PropTypes.arrayOf(
+        PropTypes.shape({
+            id:PropTypes.number.isRequired,
+            Text: PropTypes.string.isRequired,
+            rating: PropTypes.number.isRequired,
+        })
+    ),
+  
+} 
 
 export default FeedBackList;

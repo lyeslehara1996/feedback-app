@@ -14,7 +14,7 @@ function FeedBackItem ({item, handleDelete})  {
     );
 };
 FeedBackItem.propTypes={
-    item: PropTypes.object
+    item: PropTypes.object 
 }
 
 export default FeedBackItem; 

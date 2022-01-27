@@ -16,7 +16,7 @@ return(
 )
 }
 Card.defaultProps={
-    reverse: false,
+    reverse: true,
 }
 Card.propTypes={
     children:PropTypes.node,
