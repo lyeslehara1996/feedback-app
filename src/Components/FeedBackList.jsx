@@ -1,7 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import { useContext } from 'react';
 import FeedBackItem from "./FeedBackItem";
 import PropTypes from 'prop-types'
+import FeedbackContext from '../Context/FeedbackContext';
+
 function FeedBackList ({feedback,handleDelete}){
+    
    if(!feedback || feedback.length === 0){
       return <h2>No feedBack yet</h2>
    }
