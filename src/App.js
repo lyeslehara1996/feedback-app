@@ -10,8 +10,6 @@ import FeedBackForm from "./Components/FeedBackForm";
 import AboutPage from "./pages/AboutPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import AboutIconLink from "./Components/AboutIconLink";
-import { FeedbackProvider } from "./Context/FeedbackContext";
-
 function App() {
   const [feedback, setFeedback] = useState(FeedBackData);
 
@@ -27,35 +25,33 @@ function App() {
     }
   };
   return (
-    <FeedbackProvider>
-      <Router>
-        <Header />
-        <div className="container">
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <>
-                  <FeedBackForm handleAdd={addFeedback} />
-                  <FeedBackStates feedback={feedback} />
-                  <FeedBackList
-                    feedback={feedback}
-                    handleDelete={deleteFeedback}
-                  />
-                </>
-              }
-            ></Route>
+    <Router>
+      <Header />
+      <div className="container">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <FeedBackForm handleAdd={addFeedback} />
+                <FeedBackStates feedback={feedback} />
+                <FeedBackList
+                  feedback={feedback}
+                  handleDelete={deleteFeedback}
+                />
+              </>
+            }
+          ></Route>
 
-            <Route exact path="/about" element={<AboutPage />} />
-            <Route path="/*" element={<NotFound />}>
-              <NotFound />
-            </Route>
-          </Routes>
-          <AboutIconLink />
-        </div>
-      </Router>
-    </FeedbackProvider>
+          <Route exact path="/about" element={<AboutPage />} />
+          <Route path="/*" element={<NotFound />}>
+            <NotFound />
+          </Route>
+        </Routes>
+        <AboutIconLink />
+      </div>
+    </Router>
   );
 }
 
