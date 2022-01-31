@@ -20,7 +20,7 @@ function Header({ text,bgColor,textColor}) {
 // utilisation de propos pour modifier les styles 
 
 Header.defaultProps ={
-    text: 'FeedBack UI',
+    text: 'TODO List',
     bgColor:'rgba(0.0.0.4)',
     textColor:'#ff6a95',
 }
